@@ -8,9 +8,10 @@ Here's a template you can used for your Cordova App. This template has been real
  - [Nicolas Khou](https://www.linkedin.com/in/nicolas-khou-107579184/) FrontEnd Dev + TechWatch
  - [Théo Koehnemann](https://github.com/Theo6898) Back-End + RGPD
 
-[Web App](https://app.app-insas.fr) (deployed with <3 thanks to Netlify )
-[Android](https://play.google.com/store/apps/details?id=com.bdeinsastrasbourg.app&gl=FR)
-Coming on IOS AppStore 
+Avalaibility : 
+ - [Web App](https://app.app-insas.fr) (deployed with <3 thanks to Netlify )
+ - [Android](https://play.google.com/store/apps/details?id=com.bdeinsastrasbourg.app&gl=FR)
+ - Coming on IOS AppStore 
 # What you gotta know
 This template has been made from an Hybrid Web App we deployed as a **Web, Android and IOS App** using Cordova/Phonegap. Not everything is here, but hey, it's a good start !
 The original project has been led using a [Scrum](https://tree.taiga.io/project/applinh-application-bde-insa-strasbourg) method. 
