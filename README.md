@@ -1,6 +1,6 @@
 
 # Cordova-StudentApp-Template
-Here's a template you can used for your Cordova App. This template has been realized from a real app that we deployed as a Web, Android and IOS app.
+Here's a template you can use for your Cordova App. This template has been realized from a real app that we deployed as a Web, Android and IOS app.
 # Contributors of the original project and links
 
  - [Johan Bertrand](https://github.com/Blabla51?fbclid=IwAR29BG_sjAy_JkqPVyoOJbgGSVqlO3uxpo8rbqej4_Y-V0UuGAV2KiFnV-g) FullStack Dev + Main Structure
