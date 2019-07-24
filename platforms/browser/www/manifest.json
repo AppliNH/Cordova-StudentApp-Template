@@ -1,0 +1,18 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Student Association App",
+  "short_name": "Student Association App",
+  "version": "com.yourappname.app",
+  "description": "Student Association App",
+  "author": "Dont forget the team who's shared this code to you dude.",
+  "icons": [
+    {
+      "src": "./www/img/logo.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html",
+  "theme_color": "#c20000"
+}

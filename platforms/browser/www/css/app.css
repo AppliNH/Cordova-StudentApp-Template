@@ -1,0 +1,282 @@
+.hlg
+{
+	border-style:solid;
+	border-color:blue;
+}
+
+
+.full-div
+{
+	width : 100%;
+	height : 100vh;
+	overflow : hidden;
+
+}
+.img-club
+{
+	width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+/*DEVIENS AMICALISTE*/
+#tarifs {
+    
+    border-collapse: collapse;
+   
+	margin : 0 auto;
+    
+    height: 100%;
+}
+
+#tarifs td, #tarifs th {
+    border: 1vh solid #ff3b30;
+	text-align:center;
+    
+}
+
+#tarifs tr:nth-child(even){background-color: #f2f2f2;}
+
+#tarifs tr:hover {background-color: #ddd;}
+
+#tarifs th {
+    padding-top: 12px;
+    padding-bottom: 12px;	
+    
+    background-color: white;
+    color: black;
+	text-align:center;
+}
+
+/*DEVIENS AMICALISTE*/
+
+/*CARTE-AMICALISTE*/
+
+#cadrephoto {
+	margin-top:2vh;
+	margin-left :1vh;
+	width: 29vh;
+}
+
+#cadrephoto img {
+	border-style: solid;
+	border-color: white;
+}
+
+#infos {
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+div [data-name="carte-amiscaliste"] span {
+	font-weight: bold;
+	color: black;
+	margin: 5px;
+}
+
+h5 {
+	color: red;
+	font-size: 22px;
+	position: center;
+}
+
+#bdelogo {
+	width: 50vh;
+	height: 22vh;
+}
+.card-deck{
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+
+}
+.link_bubles
+{
+	width:5em;
+}
+.link_bubles2
+{
+	width:3em;
+}
+#test_img
+{
+	width:7em;
+}
+.about_team_img
+{
+	width: 50vw;
+    max-width: 35em;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*CARTE-AMICALISTE*/
+
+
+
+
+
+
+/* Utilities */
+
+.view-static-navbar
+{
+    height: calc(100% - 64px);
+}
+
+.view-static-navbar .page-content:first-child
+{
+    padding-top: 0;
+}
+.bottom
+{
+	position : absolute;
+	bottom : 0;
+}
+
+.rounded
+{
+	border-radius: 50%;
+}
+
+.w-100
+{
+	width: 100%;
+}
+
+.w-50
+{
+	width: 50%;
+}
+.w-30
+{
+	width:30%;
+
+}
+.w-25
+{
+	width:25%;
+}
+.w-20
+{
+	width:20%;
+}
+.w-10
+{
+	width:10%;
+}
+
+.h-100
+{
+	height: 100%;
+}
+
+.p-0
+{
+	padding: 0;
+}
+
+.b-0
+{
+	border: 0;
+}
+
+.m-0
+{
+	margin: 0;
+}
+.m-0_auto
+{
+	margin: 0 auto;
+}
+
+.ov-hidden
+{
+	overflow: hidden;
+}
+
+.d-none
+{
+	display: none !important;
+}
+
+.text-center
+{
+	text-align: center;
+}
+
+/* Utilities */
+/* Text classes */
+.underline
+{
+	text-decoration : underline;
+
+}
+.cent-text
+{
+	text-align : center;
+	
+}
+.title1
+{
+	font-size :35px;
+}
+.title2
+{
+	font-size :20px;
+}
+.general-text
+{
+	font-size : 18px;
+
+}
+.general-text2
+{
+	font-size : 15px;
+
+}
+.red-text
+{
+	 color: #ff3b30;
+}
+.white-text
+{
+	 color: white;
+}
+.center-img
+ {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.bold
+{
+	font-weight : bold;
+
+}
+.button
+{
+	display: flex;
+	background-color: #ddd;
+	border: #eee 1px solid;
+	box-shadow: #999 0 0 1px;
+	color: #000 !important;
+	padding: 8px;
+	margin: 8px;
+	box-sizing: border-box;
+	transition: background-color 0.2s linear;
+	justify-content: center;
+}
+.button:hover
+{
+	background-color: #bbb;
+}
+.banner
+{
+	display: block;
+	background-color: #eee;
+	text-align: center;
+	font-size: 1.2em;
+}

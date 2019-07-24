@@ -1,0 +1,333 @@
+<!-- ui -->
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#c20000">
+  <!-- Your app title -->
+  <title>Student Association App</title>
+  <!-- Path to Framework7 Library CSS -->
+  <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+  <!-- Path to Framework7-icons Library CSS -->
+  <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
+  <!-- Path to your custom app styles-->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="color-theme-blue">
+  <!-- App root element -->
+  <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar">
+
+    </div>
+    <!-- Left panel with cover effect-->
+    <div class="panel panel-left panel-cover theme-light">
+      <div class="view">
+        <div class="page">
+          <div class="page-content">
+            <div class="block" style="text-align:center;">
+                <a href="/" class="link"><img id="test_img" src="img/logo.png" class="w-50" /></a>
+            </div>
+            <div class="row">
+                <div class="col-10">
+          
+                </div>
+                <div class="col-20">
+                  <a href="https://www.facebook.com/" class="external" target="_blank"><img class="link_bubles2 rounded" src="img/logo-facebook.png" ></a>
+                </div>
+                <div class="col-10">
+                  
+                </div>
+                <div class="col-20">
+                  <a href="https://www.example.com/" class="external" target="_blank"><img class="link_bubles2 rounded" src="img/logo-site-web.png" ></a>
+                </div>
+                <div class="col-10">
+                  
+                </div>
+                <div class="col-20">
+                  <a href="https://www.youtube.com/" class="external" target="_blank"><img class="link_bubles2 rounded" src="img/logo-youtube.png" ></a>
+                </div>
+                <div class="col-10">
+                  
+                </div>
+              </div>
+            <div class="list">
+              <ul>
+                <li class="bg-color-blue">
+                  <a href="/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Home<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue app-panel-logged-user">
+                  <a href="/alaune/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">News<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue">
+                  <a href="/faq/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">FAQ<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue">
+                  <a href="/partenaires/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Sponsors<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue app-panel-logged-user">
+                  <a href="/agenda/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Events' Calendar<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue">
+                  <a href="/clubs/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Our Friends !<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--<div class="block-title">Mon compte</div>-->
+            <div class="list">
+              <ul>
+                <li class="bg-color-blue app-panel-logged-user">
+                  <a href="/carte-amicaliste/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Member Card<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue app-panel-logged-user">
+                  <a href="/parametres/" class="color-white">
+                    <div class="item-content">
+                        <div class="item-inner">Settings<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue app-panel-logged-user">
+                  <a href="#" class="color-white logout-button">
+                    <div class="item-content">
+                      <div class="item-inner">Logout<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue app-panel-anon-user">
+                  <a href="/deviens-amicaliste/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Become a member !<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue app-panel-anon-user">
+                  <a href="#" class="color-white login-screen-open" data-login-screen="#main-login-screen">
+                    <div class="item-content">
+                      <div class="item-inner">Login<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="list">
+              <ul>
+                <li class="bg-color-blue">
+                  <a href="/nous-contacter/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Contact Us<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue">
+                  <a href="/mentions-legales/" class="color-white">
+                    <div class="item-content">
+                      <div class="item-inner">Legal Notice<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                    </div>
+                  </a>
+                </li>
+                <li class="bg-color-blue">
+                    <a href="/aboutteam/" class="color-white">
+                      <div class="item-content">
+                        <div class="item-inner">About this app<i class="icon f7-icons" style="font-size:100%;">chevron_right</i></div>
+                      </div>
+                    </a>
+                  </li>
+              </ul>
+            </div>
+            <div class="block-title">Version X.X.X</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only panel-open" data-panel="left">
+            <i class="icon f7-icons">bars</i>
+          </a>
+        </div>
+        <div class="title">Home</div>
+      </div>
+    </div>
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main view-static-navbar">
+      <!-- Initial Page, "data-name" contains page name -->
+      <div data-name="home" class="page">
+
+    
+
+        <!-- Scrollable page content -->
+        <div class="page-content">
+			<div class="content-block">
+				<div class="card bg-color-blue">
+					
+					<h1 class="cent-text title1 white-text bold">Welcome to your own Student App !</h1>
+				</div>
+					
+				
+				<div class="card">
+				<img class="center-img" style="width:20vh; height:25vh;" src="img/logo.png" />
+					<div class="card-content card-content-padding">
+						<p class="cent-text title2"> This app allows you to : </p>
+						<ul>
+							<li class="general-text bold">Functionnality 1.</li>
+							<li class="general-text bold">Functionnality 2</li>
+							<li class="general-text bold">Etc.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card bg-color-blue">
+					<p class="bold cent-text title2 white-text"> Just another card</p>
+					<div class="card-content card-content-padding">
+					</div>
+				</div>
+				</div>
+				<div class="card bg-color-blue">
+					<a href="/aboutteam/"><div class="card-content card-content-padding">
+						<p class="cent-text general-text2 bold white-text">Click here to learn more about this app !</p>
+					</div></a>
+				</div>
+					
+					
+				
+			</div>
+	<!-- Scrollable page content -->
+        </div>
+      </div>
+   </div>
+    <!-- Login Screen -->
+    <div class="login-screen" id="main-login-screen">
+      <div class="view">
+        <div class="page">
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">Login</div>
+            <div class="list">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">ID</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="login" placeholder="Identifiant">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Password</div>
+                    <div class="item-input-wrap">
+                      <input type="password" name="password" placeholder="Mot de passe">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="list">
+              <ul>
+                <li>
+                  <a href="#" class="item-link list-button login-button">Login</a>
+                </li>
+                <li>
+                  <a href="#" class="item-link list-button login-screen-close" data-login-screen="#main-login-screen">Back</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Password change screen -->
+  <div class="login-screen" id="password-screen">
+    <div class="view">
+      <div class="page">
+        <div class="page-content login-screen-content">
+          <div class="login-screen-title">New Password</div>
+          <div class="list">
+            <ul>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Previous Password</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="old-password" placeholder="Previous Password">
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">New Password</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="new-password-1" placeholder="New Password">
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Repeat New Password</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="new-password-2" placeholder="Repeat New Password">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>
+                <a href="#" class="item-link list-button change-password-button">Change my password</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="cordova.js"></script> 
+  <!-- Path to Framework7 Library JS-->
+  <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+  <script type="text/javascript" src="js/routes.js"></script>
+  <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/edt.js"></script>
+</body>
+
+</html>

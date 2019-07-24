@@ -1,0 +1,37 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-background-fetch": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    },
+    "cordova-plugin-background-service": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.yourappname.app"
+    }
+  }
+}

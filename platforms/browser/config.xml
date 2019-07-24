@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.yourappname.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Student Association App</name>
+    <description>
+        Student Association App
+    </description>
+    <author email="you@you.com" href="http://www.example.com">
+        Dont forget the team who's shared this code to you dude.
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <access origin="http://www.google.com/maps/place/*" />
+    <allow-intent href="http://*" />
+    <allow-intent href="http://*/*/" />
+    <allow-intent href="http://www.google.com/maps/place/*" />
+    <allow-intent href="https://www.facebook.com/BdE-INSA-Strasbourg-311877592203611/" />
+    <allow-navigation href="http://*/*/" />
+    <allow-navigation href="http://facebook.com/*" />
+    <allow-navigation href="http://www.google.com/maps/place/*" />
+    <allow-intent href="https://*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="./www/img/logo.png" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="android-targetSdkVersion" value="28" />
+</widget>

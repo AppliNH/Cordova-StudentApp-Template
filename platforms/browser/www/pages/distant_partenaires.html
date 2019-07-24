@@ -1,0 +1,358 @@
+<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1549984893" />
+<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../lib/framework7-icons/css/framework7-icons.css">
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  .iconcustom
+  {
+    left:1%;
+    float:left;
+    width: 3em;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+  }
+  .hlg
+  {
+    border-style: solid;
+    border-color: blue;
+  }
+   .navigationMARKERS {
+  overflow:auto;
+  list-style-type : none;
+  display: inline-block;
+  height : 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #c20000;
+  position: relative;
+  }
+  
+  li {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  }
+  
+  #mainscreen {
+  height:100vh;
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  }
+  
+  #map {
+    border-left-style:solid;
+    border-left-color: black;
+    width:100%;
+    height:100vh;
+  }
+
+  .H_ib
+  {
+    width:9vw;
+    
+  }
+  .H_ib_body {             /*STYLE YOUR INFOBUBBLES bRO*/
+  color:whitesmoke;
+  background: #c20000;
+  border: 0.5vh solid #333333;
+  padding:0px;
+  margin: 2vh;
+  height: auto;
+  margin-left : 2vw;
+  font-size:1em;
+  
+  border-radius: 25px;
+  width:auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+  #titleIB {
+    margin-top:2vh;
+    font-weight: bold;
+    font-size:3vh;
+    line-height:3vh;
+  }
+
+  hr.thinIB {
+    border-style:solid;
+    border-color:whitesmoke;
+    width:90%;
+  }
+
+  #textIB {
+    width:40vh;
+  }
+
+  #mapsIB
+  {
+    text-align:center;
+  }
+
+  #mapsIB a
+  {
+    color:gold;
+  }
+
+  .page-content
+  {
+    /* position:relative; */
+    text-align: center;
+    background-color: blue;
+  }
+
+  .topscreen {
+    /* position: relative; */
+    float:left;
+    top: 1vh;
+    color: white;
+  }
+  .row
+  {
+    display:flex;
+    align-items: center;
+  }
+  .tog
+  {
+    position : absolute;
+    z-index: 10;
+    display: inline-block;
+    line-height: 1em;
+    width:10%;
+  }
+</style>
+
+<div class="page">
+    <div class="page-content row">
+      <div class="col topscreen">
+        
+      </div>
+      <div class="row" id="mainscreen">
+          
+            <ul class="navigationMARKERS">
+            </ul>
+            <div  class="col-20">
+            <a class="tog">
+                  <img class="iconcustom" src="../img/chevron-sign-to-right.png"/>
+            </a>
+          </div>
+            <div class="col-80" id="map">
+            </div>
+        </div>
+ 
+  </div>
+</div>
+
+<script  type="text/javascript" charset="UTF-8" >
+  var Your_app_id = "";
+  var Your_app_code = "";
+  var kmlURL = "https://your-KML-FILE-URL.fr";
+  var map;
+  var nav = [];
+  var MarkANDInfoW = [];
+  var QueryMarker = [];
+  var storeA = [];
+  var ListLinkMarker = [];
+  var ListLinkInfoWindow = [];
+  var ident = 0;
+  var StartMPLINK = 'http://www.google.com/maps/place/';
+  var LatOfYourChoice;
+  var LngOfYourChoice;
+
+  /**
+   * Moves the map to display over your city
+   *
+   * @param  {H.Map} map      A HERE Map instance within the application
+   */
+  function moveMapToYourCity(map){
+    map.setCenter({lat:LatOfYourChoice, lng:LngOfYourChoice});
+    map.setZoom(15);
+  }
+
+  /**
+  * Creates a new marker and adds it to a group
+  * @param {H.map.Group} group       The group holding the new marker
+  * @param {H.geo.Point} coordinate  The location of the marker
+  * @param {String} html             Data associated with the marker
+  */
+  function addMarkerToGroup(group, coordinate, html) {
+    if(window.innerWidth < 768)
+    {
+      var MarkerSizeW = window.innerWidth * 0.25;
+    var MarkerSizeWalt = (window.innerWidth * 0.25)/2;  
+    }
+    else
+    {
+    var MarkerSizeW = window.innerWidth * 0.1;
+    var MarkerSizeWalt = (window.innerWidth * 0.1)/2;
+    }
+    var marker = new H.map.Marker(coordinate,{ icon: new H.map.Icon("../img/marker.png", { 
+      size: { w: MarkerSizeW, h: MarkerSizeW },         // if you increase the size, you also have to increase other parameters
+      anchor: { x: MarkerSizeWalt, y: MarkerSizeWalt }, 
+      hitArea: new H.map.HitArea(H.map.HitArea.ShapeType.CIRCLE, [0,0,MarkerSizeW]) }) });
+    // add custom data to the marker
+    marker.setData(html);
+    group.addObject(marker);
+  }
+  // marker.addEventListener("click", function(){
+  //   map.setCenter({
+  //           lat:nav[$(this).index()].lat + 0.0055,
+  //           lng:nav[$(this).index()].lng - 0.0055
+  //         });
+  //         map.setZoom(15);
+  // }, false);
+  function addInfoBubble(map,x,y,html) {
+    var group = new H.map.Group();
+
+    map.addObject(group);
+    
+    // add 'tap' event listener, that opens info bubble, to the group
+    group.addEventListener('tap', function (evt) {
+
+      map.setCenter({
+            lat: evt.target.getPosition().lat + 0.0050,
+            lng: evt.target.getPosition().lng - 0.0045
+          });
+  
+      // event target is the marker itself, group is a parent event target
+      // for all objects that it contains
+      var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+        // read custom data
+        content: evt.target.getData()
+      });
+      // show info bubble
+      ui.getBubbles().forEach(bubble => ui.removeBubble(bubble));
+      ui.addBubble(bubble);
+    }, false);
+
+    addMarkerToGroup(group, {lat:x, lng:y}, html);
+  }
+    
+    /**
+    * Boilerplate map initialization code starts below:
+    */
+    
+    //Step 1: initialize communication with the platform
+    var platform = new H.service.Platform({
+      app_id: Your_app_id,
+      app_code: Your_app_code,
+      useHTTPS: true
+    });
+    var pixelRatio = window.devicePixelRatio || 1;
+    var defaultLayers = platform.createDefaultLayers({
+      tileSize: pixelRatio === 1 ? 256 : 512,
+      ppi: pixelRatio === 1 ? undefined : 320
+    });
+    
+    //Step 2: initialize a map  - not specificing a location will give a whole world view.
+    var map = new H.Map(document.getElementById('map'),
+      defaultLayers.normal.map, {pixelRatio: pixelRatio});
+    
+    //Step 3: make the map interactive
+    // MapEvents enables the event system
+    // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+    
+    // Create the default UI components
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'fr-FR');
+    
+    // Now use the map as required...
+    moveMapToYourCity(map);
+
+    $(document).ready(function(){
+
+  // alows us to get into the file which is a .kml linked to my GMaps on my google drive
+  // kml format is close to xml, and that's with this idea that we fetch it
+  $.get(kmlURL, function(data){
+
+      html = "";
+
+      //loop through placemarks tags
+      $(data).find("Placemark").each(function(index, value){
+          //get coordinates and place name
+          coords = $(this).find("coordinates").text();
+          place = $(this).find("name").text();
+          desc = $(this).find("description").text();
+          stylurl = $(this).find("styleUrl").text();
+          //store as JSON
+          var c = coords.split(",")
+          // did this because they were strings
+          // and I think google.maps.LatLng can't use strings as parameters
+          c[0] = parseFloat(c[0]);
+          c[1] = parseFloat(c[1]);
+          nav.push({
+              "place": place,
+              "lat": c[1],
+              "lng": c[0],
+              "desc":desc
+          })
+          //output as a navigation + identification of each line
+          html += "<li id='"+ident+"' >" + place + "</li>";
+          
+          //building the content of our bubble :)
+          var MapsHPLink ='<a target="_blank" href="'+StartMPLINK+c[1]+','+c[0]+'">See On Maps</a>';
+          var FinalDesc = '<div id="titleIB">'+place+'</div>'+'<br />'+'<hr class="thinIB"></hr>'+'<br />'+'<div id="textIB">'+desc+'</div>'+'<br />'+'<div id="mapsIB">'+MapsHPLink+'</div>';
+
+          //Store finaldesc for InfoBubble of ListItem purposes
+          storeA.push({
+            "content":FinalDesc
+          })
+
+          addInfoBubble(map,c[1],c[0],FinalDesc);
+          
+          //Here we kind of manage our markers by arranging them in an array
+          //which position corresponds to the id of our list item
+          ListLinkMarker[ident] = MarkANDInfoW[0];
+          
+          //we increase the id, so each list item can have its own id :)
+          ident = ident + 1;
+
+      })
+      //add the list html code to the <ul> armed with navigation class :D
+      $(".navigationMARKERS").append(html);
+
+      //bind clicks on your navigation to scroll to a placemark
+      $(".navigationMARKERS li").on("click", function(){
+          $(".navigationMARKERS").hide();
+
+          //creating HMaps coordinates for the list element clicked
+          var GeoPointList = new H.geo.Point(nav[$(this).index()].lat,nav[$(this).index()].lng);
+
+          //check if previous infowindow is opened, and if yes close it
+          ui.getBubbles().forEach(bubble => ui.removeBubble(bubble));
+
+          //creating the InfoBubble
+          var bubbleList =  new H.ui.InfoBubble(GeoPointList,{
+             content: storeA[$(this).index()].content
+          });
+          
+          ui.addBubble(bubbleList);
+          
+          //get the id of the list item you clicked on (can be used for anything idk)
+          var identclik = $(this).attr('id'); 
+
+          //scroll to marker !
+          map.setCenter({
+            lat:nav[$(this).index()].lat + 0.0050,
+            lng:nav[$(this).index()].lng - 0.0045
+          });
+          map.setZoom(15);
+      })
+
+  });
+  $(".navigationMARKERS").hide();
+  $(".tog").click(function(){
+    $(".navigationMARKERS").toggle(700);
+  });
+  
+
+  })
+  </script>
