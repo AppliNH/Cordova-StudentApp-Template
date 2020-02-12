@@ -18,6 +18,8 @@ The original project has been led using a [Scrum](https://tree.taiga.io/project/
 The original app aims to offer some services to the members/subscribers of a student association, in a French Engineering school called "INSA de Strasbourg".
 Everything has been made from our hands, the project has started from our very own initiative, and is "RGPD-Friendly". 
 
+(Please note that it was, for the majority of us, our very first IT Project.
+
 The functionalities are :
 
  - Login/Logout
